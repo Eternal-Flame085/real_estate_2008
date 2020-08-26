@@ -39,4 +39,17 @@ class House
   def test_price_per_square_foot
     (@price.split("$")[1].to_f / area).round(2)
   end
+
+  def rooms_by_category
+    rooms = Hash.new
+
+    @rooms.each do |room|
+      if !rooms.key?(room.category) && rooms_from_category(room.category).length > 1
+        rooms[room.category] = rooms_from_category(room.category)
+      else
+        rooms[room.category] = rooms_from_category(room.category)
+      end
+    end
+    rooms
+  end
 end
