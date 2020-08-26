@@ -40,6 +40,20 @@ class House
     (@price.split("$")[1].to_f / area).round(2)
   end
 
+  def rooms_sorted_by_area
+    temp_hash = Hash.new
+    sorted_array = []
+
+    @rooms.each do |room|
+      temp_hash[room.area] = room
+    end
+
+    @rooms.map{|room| room.area}.sort.each do |area|
+      sorted_array << temp_hash[area]
+    end
+    sorted_array
+  end
+
   def rooms_by_category
     rooms = Hash.new
 
