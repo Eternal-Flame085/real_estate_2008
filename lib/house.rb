@@ -35,4 +35,8 @@ class House
   def details
     {"price" => @price.split("$")[1].to_i, "address" => @address}
   end
+
+  def test_price_per_square_foot
+    (@price.split("$")[1].to_f / area).round(2)
+  end
 end
