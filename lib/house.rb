@@ -31,4 +31,8 @@ class House
     end
     area
   end
+
+  def details
+    {"price" => @price.split("$")[1].to_i, "address" => @address}
+  end
 end
