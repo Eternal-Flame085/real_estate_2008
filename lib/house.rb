@@ -23,4 +23,12 @@ class House
       room.category == category
     end
   end
+
+  def area
+    area = 0
+    @rooms.each do |room|
+      area += room.area
+    end
+    area
+  end
 end
